@@ -1,12 +1,470 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Project 0: Google Search</title>
-    </head>
-    <body>
-        <form action="https://www.google.com/search">
-            <input type="search" name="q">
-            <input type="submit" value="Google Search">
+<html lang="en-CA">
+  <head>
+    <title>Google</title>
+    <style>
+      .gb_h.gb_i {
+        display: none;
+        padding-left: 15px;
+        vertical-align: middle;
+      }
+
+      .gb_h.gb_i:first-child {
+        padding-left: 0;
+      }
+
+      .gb_h .gb_g {
+        display: inline-block;
+        line-height: 24px;
+        outline: none;
+        vertical-align: middle;
+      }
+
+      .gb_i {
+        display: inline-block;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        -webkit-flex: 0 0 main-size;
+        flex: 0 0 main-size;
+      }
+
+      .gb_i.gb_Fg {
+        float: right;
+        -webkit-order: 1;
+        order: 1;
+      }
+
+      .gb_Hg {
+        white-space: nowrap;
+      }
+
+      .gb_Hg,
+      .gb_i {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .gb_Xa {
+        min-width: 165px;
+        padding-left: 30px;
+        padding-right: 30px;
+        position: relative;
+        text-align: right;
+        z-index: 986;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        -webkit-user-select: none;
+      }
+
+      .gb_Xa.gb_i {
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto;
+        -webkit-flex: 1 1 main-size;
+        flex: 1 1 main-size;
+      }
+
+      .gb_je.gb_i {
+        -webkit-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-flex: 0 1 main-size;
+        flex: 0 1 main-size;
+      }
+
+      .gb_je {
+        line-height: normal;
+        padding-right: 15px;
+      }
+
+      .gb_Xa .gb_je {
+        padding-right: 0;
+      }
+
+      .gb_Ig.gb_Ig .gb_h {
+        display: inline-block;
+      }
+
+      .gb_Ig.gb_Xa .gb_je {
+        padding-right: 15px;
+      }
+
+      .gb_Ig.gb_Xa {
+        z-index: 987;
+      }
+    </style>
+  </head>
+  <body class="hp vasq" id="gsr">
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      #viewport {
+        min-height: 100%;
+        position: relative;
+        width: 100%;
+      }
+
+      .content {
+        padding-bottom: 35px;
+      }
+
+      body,
+      a {
+        font-family: arial, sans-serif;
+      }
+
+      .ctr-p {
+        margin: 0 auto;
+        min-width: 400px;
+      }
+
+      body {
+        background: #fff;
+        color: #222;
+      }
+
+      a {
+        color: #1a0dab;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:active {
+        text-decoration: underline;
+      }
+
+      a:visited {
+        color: #609;
+      }
+
+      body,
+      html {
+        font-size: small;
+      }
+
+      #body {
+        display: block;
+      }
+
+      .hp #tsf {
+        margin: 0 auto;
+        width: 833px;
+        width: auto;
+        margin: 0 32px;
+      }
+
+      #tsf {
+        width: 833px;
+      }
+    </style>
+
+    <div class="ctr-p" id="viewport">
+      <style>
+        @media only screen and (max-width: 380px) {
+          #gb div {
+            display: none;
+          }
+        }
+
+        #gb {
+          font-size: 13px;
+          position: relative;
+          top: 8px;
+          top: 16px;
+        }
+
+        div#viewport {
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+
+        div#searchform.jhp {
+          margin-top: 0;
+        }
+
+        .jhp > #tsf {
+          max-width: none;
+        }
+      </style>
+      <!-- This is the Link to the other pages at the top right side-->
+      <div id="gb">
+        <div id="gbw">
+          <div style="top: 0; left: 0; right: 0; width: 100%">
+            <div class="gb_Xa gb_Hg gb_i gb_Fg gb_Ig" data-ogsr-up="">
+              <div class="gb_je gb_i gb_Hg gb_xg" data-ogbl="">
+                <div class="gb_h gb_i">
+                  <a class="gb_g" href="image_search.html"> Images </a>
+                </div>
+                <div class="gb_h gb_i">
+                  <a class="gb_g" href="advanced_search.html"> Advanced </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- This is the Search Box, and Search Button and I'm Felling Luck Button. -->
+      <div class="jhp" id="searchform">
+        <style>
+          .gsfi {
+            font: 16px arial, sans-serif;
+            line-height: 34px;
+            height: 34px !important;
+          }
+
+          .jhp input[type="submit"] {
+            background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+            background-color: #f2f2f2;
+            border: 1px solid #f2f2f2;
+            border-radius: 4px;
+            color: #5f6368;
+            cursor: pointer;
+            font-family: arial, sans-serif;
+            font-size: 14px;
+            margin: 11px 4px;
+            min-width: 54px;
+            padding: 0 16px;
+            text-align: center;
+          }
+
+          .jhp input[type="submit"] {
+            height: 36px;
+            line-height: 27px;
+          }
+
+          .tsf {
+            background: none;
+          }
+
+          #searchform {
+            width: 100%;
+          }
+
+          .hp #searchform {
+            position: absolute;
+            top: 311px;
+          }
+
+          @media only screen and (max-height: 768px) {
+            .hp #searchform {
+              top: 269px;
+            }
+          }
+
+          .hp #searchform {
+            min-width: 400px;
+          }
+        </style>
+        <form
+          class="tsf"
+          action="https://www.google.com/search"
+          style="overflow: visible"
+          data-submitfalse="q"
+          id="tsf"
+          method="GET"
+          name="f"
+          role="search"
+        >
+          <div>
+            <div class="A8SBwf">
+              <style>
+                .A8SBwf {
+                  position: relative;
+                  margin: 0 auto;
+                  padding-top: 6px;
+                  width: 484px;
+                  width: auto;
+                  max-width: 484px;
+                }
+
+                .RNNXgb {
+                  background: #fff;
+                  display: flex;
+                  border: 1px solid #dfe1e5;
+                  box-shadow: none;
+                  border-radius: 24px;
+                  z-index: 3;
+                  height: 44px;
+                  margin: 0 auto;
+                  width: 482px;
+                  width: auto;
+                }
+
+                .RNNXgb:hover {
+                  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+                  border-color: rgba(223, 225, 229, 0);
+                }
+
+                .SDkEP {
+                  flex: 1;
+                  display: flex;
+                  padding: 5px 8px 0 16px;
+                  padding-left: 14px;
+                }
+
+                .FPdoLc {
+                  padding-top: 18px;
+                  top: 53px;
+                  z-index: 0;
+                }
+              </style>
+              <div class="RNNXgb">
+                <div class="SDkEP">
+                  <div>
+                    <style>
+                      .gLFyf {
+                        background-color: transparent;
+                        border: none;
+                        margin: 0;
+                        padding: 0;
+                        color: rgba(0, 0, 0, 0.87);
+                        word-wrap: break-word;
+                        outline: none;
+                        display: flex;
+                        flex: 100%;
+                        -webkit-tap-highlight-color: transparent;
+                        margin-top: -37px;
+                        height: 34px;
+                        font-size: 16px;
+                      }
+
+                      .pR49Ae {
+                        color: transparent;
+                        flex: 100%;
+                        white-space: pre;
+                        height: 34px;
+                      }
+                    </style>
+                    <div class="pR49Ae gsfi"></div>
+                    <input
+                      class="gLFyf gsfi"
+                      maxlength="2048"
+                      name="q"
+                      type="text"
+                      aria-autocomplete="both"
+                      aria-haspopup="false"
+                      autocapitalize="off"
+                      autocomplete="off"
+                      autocorrect="off"
+                      autofocus=""
+                      role="combobox"
+                      spellcheck="false"
+                      title="Search"
+                      value=""
+                      aria-label="Search"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="FPdoLc tfB0Bf">
+                <center>
+                  <input
+                    value="Google Search"
+                    aria-label="Google Search"
+                    name="btnK"
+                    type="submit"
+                  />
+                  <input
+                    value="I'm Feeling Lucky"
+                    aria-label="I'm Feeling Lucky"
+                    name="btnI"
+                    type="submit"
+                  />
+                </center>
+              </div>
+            </div>
+          </div>
         </form>
-    </body>
+      </div>
+      <div style="display: none" data-u="0"></div>
+      <div class="content" id="main">
+        <span class="ctr-p" id="body">
+          <center>
+            <div
+              data-responsive-height-resize="536"
+              data-responsive-min-height="100"
+              data-responsive-min-width="400"
+              id="lga"
+            >
+              <style>
+                .hp #searchform {
+                  transition: top 0.4s ease, transform 0.4s ease;
+                }
+
+                #lga {
+                  transition: margin-top 0.4s ease, height 0.4s ease;
+                }
+
+                div#lga img#GoogleLogo {
+                  transition: padding-top 0.4s ease, width 0.4s ease,
+                    height 0.4s ease;
+                  width: auto;
+                }
+
+                div#lga div#GoogleLogo {
+                  max-width: 100%;
+                  line-height: 233px;
+                  transition: height 0.4s ease, transform 0.4s ease,
+                    width 0.4s ease;
+                }
+
+                div#GoogleLogo a img {
+                  max-width: 100%;
+                  height: auto;
+                  vertical-align: bottom;
+                }
+
+                @media only screen and (max-height: 536px) {
+                  .hp #searchform {
+                    transform: translateY(-129px);
+                  }
+
+                  .hp #lga {
+                    height: 100px;
+                  }
+
+                  div#lga img#GoogleLogo {
+                    padding-top: 10px !important;
+                    height: 72px;
+                    width: auto;
+                  }
+
+                  div#GoogleLogo {
+                    transform: scale(0.5) translateY(-120px);
+                    width: 400px !important;
+                  }
+                }
+              </style>
+              <style>
+                #lga {
+                  height: 233px;
+                  margin-top: 89px;
+                }
+
+                @media only screen and (max-height: 768px) {
+                  #lga {
+                    margin-top: 47px;
+                  }
+                }
+              </style>
+              <img
+                alt="Google"
+                height="92"
+                id="GoogleLogo"
+                src="googlelogo_color_272x92dp.png"
+                style="padding-top: 109px"
+                width="272"
+              />
+            </div>
+          </center>
+        </span>
+      </div>
+    </div>
+    <textarea class="csi" name="csi" style="display: none"></textarea>
+  </body>
 </html>
